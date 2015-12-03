@@ -1,0 +1,5 @@
+{
+  "name": "Who Said It",
+  "description": "A Node.js app demonstrating the Stanford Classifier",
+  "keywords": ["node", "express", "static"],
+}
