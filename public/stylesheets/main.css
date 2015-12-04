@@ -13,3 +13,11 @@
 .drawer-menu-item{
 	font-size: 1.5rem;
 }
+
+#dem{
+	display: none;
+}
+
+#rep{
+	display: none;
+}

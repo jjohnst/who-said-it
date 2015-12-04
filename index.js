@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express();
+var stanfordClassifier = require('stanford-classifier');
+var byline = require('byline');
+var fs = require('fs');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -10,7 +13,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.render('pages/index')
+  response.render('pages/index');
 });
 
 app.listen(app.get('port'), function() {
