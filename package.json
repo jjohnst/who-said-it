@@ -12,6 +12,9 @@
     "ejs": "2.3.3",
     "express": "4.13.3",
     "fs": "0.0.2",
+    "http": "0.0.0",
+    "java": "^0.6.0",
+    "querystring": "^0.2.0",
     "stanford-classifier": "2.0.0"
   },
   "engines": {
