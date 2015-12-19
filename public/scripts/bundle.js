@@ -1,5 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-(function (Buffer){
 $(document).ready(function() {
   $('.drawer').drawer();
   $('#classify').click(
@@ -18,40 +17,44 @@ function classifyStatement(){
 	var http = require('http');
 	var pStatement = $('#statement').val();
 	console.log(pStatement);
+	var num = Math.random() * (100);
 
-	var data = querystring.stringify({
-    	statement: $('#statement').val()
-  	});
+	// var data = querystring.stringify({
+ //    	statement: $('#statement').val()
+ //  	});
 
-	  var options = {
-	    host: 'requestb.in',
-	    port: 80,
-	    path: '/w8xu7iw8',
-	    method: 'POST',
-	    headers: {
-	      'Content-Type': 'application/x-www-form-urlencoded',
-	      'Content-Length': Buffer.byteLength(data)
-	    }
-	  };
+	//   var options = {
+	//     host: 'requestb.in',
+	//     port: 80,
+	//     path: '/w8xu7iw8',
+	//     method: 'POST',
+	//     headers: {
+	//       'Content-Type': 'application/x-www-form-urlencoded',
+	//       'Content-Length': Buffer.byteLength(data)
+	//     }
+	//   };
 
-	  var httpreq = http.request(options, function (response) {
-	    response.setEncoding('utf8');
-	    response.on('data', function (chunk) {
-	      console.log("body: " + chunk);
-	    });
-	    response.on('end', function() {
-	      res.send('ok');
-	    })
-	  });
-	  httpreq.write(data);
-	  httpreq.end();
-
+	//   var httpreq = http.request(options, function (response) {
+	//     response.setEncoding('utf8');
+	//     response.on('data', function (chunk) {
+	//       console.log("body: " + chunk);
+	//     });
+	//     response.on('end', function() {
+	//       res.send('ok');
+	//     })
+	//   });
+	//   httpreq.write(data);
+	//   httpreq.end();
+	if(num %2 == 0){
+		$("#rep").css("display", "inline-block").fadeIn(1000);
+	}
+	else{
+		$("#dem").css("display", "inline-block").fadeIn(1000);
+	}
 	console.log("I classified you");
-	$("#dem").css("display", "inline-block").fadeIn(1000);
 }
 
-}).call(this,require("buffer").Buffer)
-},{"buffer":4,"http":30,"querystring":18}],2:[function(require,module,exports){
+},{"http":30,"querystring":18}],2:[function(require,module,exports){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 ;(function (exports) {
