@@ -2,10 +2,6 @@ $(document).ready(function() {
   $('.drawer').drawer();
   $('#classify').click(
 	  	function () {
-	      $('.drawer').fadeOut(500, function() {
-        	$('.drawer').css("background-color", "#08B2E3").fadeIn(1000);
-   		  }); 
-	      //rep red: DD1C1A
 	      classifyStatement();
 	    }            
     );
@@ -16,7 +12,8 @@ function classifyStatement(){
 	var http = require('http');
 	var pStatement = $('#statement').val();
 	console.log(pStatement);
-	var num = Math.random() * (100);
+	var num = Math.floor(Math.random() * (100));
+	console.log(num);
 
 	// var data = querystring.stringify({
  //    	statement: $('#statement').val()
@@ -45,9 +42,17 @@ function classifyStatement(){
 	//   httpreq.write(data);
 	//   httpreq.end();
 	if(num %2 == 0){
+		$('.drawer').fadeOut(500, function() {
+        	$('.drawer').css("background-color", "#DD1C1A").fadeIn(1000);
+   		  }); 
+		$("#dem").css("display", "none");
 		$("#rep").css("display", "inline-block").fadeIn(1000);
 	}
 	else{
+		$('.drawer').fadeOut(500, function() {
+        	$('.drawer').css("background-color", "#08B2E3").fadeIn(1000);
+   		  }); 
+		$("#rep").css("display", "none");
 		$("#dem").css("display", "inline-block").fadeIn(1000);
 	}
 	console.log("I classified you");
